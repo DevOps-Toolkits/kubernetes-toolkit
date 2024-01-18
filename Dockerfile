@@ -29,7 +29,6 @@ RUN yum clean all && yum makecache && yum -y install \
     net-tools \
     dnsutils \
     unzip \
-    exa \
     fd-find \
     ripgrep \
     tig \
