@@ -1,4 +1,4 @@
-FROM global-docker-hub-remote.orgartifactory.swinfra.net/fedora:38
+FROM fedora:39
 
 ARG BUILD_DATE
 
