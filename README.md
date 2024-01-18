@@ -3,7 +3,7 @@
 
 # Docker Run
 
-- For linux:
+- For linux, please exec below command:
 
 ```bash
 docker run -it \
@@ -26,4 +26,3 @@ docker run -it \
 -v C:\Users\USERNAME\.kube:/root/.kube -v C:\Users\USERNAME\.aws:/root/.aws
 ```
 
-# Introduction of tools in this container
