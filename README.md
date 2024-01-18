@@ -18,7 +18,7 @@ docker run -it \
   registry.cn-hangzhou.aliyuncs.com/jihaoyun/kube-toolkit
 ```
 
-> **Pls do not add bash at the end of this command!**
+> **Pls do not add bash at the end of this command! It would use zsh by default.**
 
 - For windows:
 
