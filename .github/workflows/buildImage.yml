@@ -20,7 +20,7 @@ jobs:
 
     - name: CI Docker Login
       run: |
-        docker login registry.cn-hangzhou.aliyuncs.com -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
+        docker login registry.cn-hangzhou.aliyuncs.com -u ${{ secrets.ALI_REGISTRY_USERNAME }} -p ${{ secrets.ALI_REGISTRY_PASSWORD }}
 
     - name: Build the Docker kube-toolkit
       run: |
