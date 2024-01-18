@@ -1,0 +1,65 @@
+: 1681916806:0;
+: 1681702322:0;kubectl cp -n ns pod:podPath localPath
+: 1681702332:0;kubectl exec -it deploy/name -c container -- /bin/bash
+: 1660631630:0;helm repo ls
+: 1662706678:0;helm ls -A
+: 1675231804:0;helm show values -n ns releaseName
+: 1660631680:0;helm repo add name url
+: 1673579782:0;velero backup get
+: 1662701981:0;velero backup-location get
+: 1678156417:0;rm -rf 
+: 1678156416:0;flux get all
+: 1681702337:0;git commit -m "xx"
+: 1681702338:0;git add *
+: 1681702339:0;wget -qnc -O localName url
+: 1681702340:0;curl -k http://url
+: 1681702341:0;curl -ks -u username:pass  -X PUT "https://url"
+: 1681702342:0;kubectl get resourceName -n ns name -oyaml
+: 1681702343:0;kubectl exec -it -n ns pod -c container -- command
+: 1681702344:0;kubectl apply -f file -n ns
+: 1681705214:0;kubectl logs -f -n ns pod
+: 1681705297:0;psql -h fqdn -U postgres
+: 1681705303:0;ssh root@xx
+: 1681708530:0;PGPASSWORD=pass psql -h fqdn -U postgres
+: 1681708536:0;source ~/.zshrc
+: 1681708570:0;git clone
+: 1681708575:0;export AWS_PROFILE=PROFILE
+: 1681708579:0;aws eks update-kubeconfig --name clustername-cluster
+: 1681708588:0;k9s
+: 1682070783:0;ip a s
+: 1682070859:0;yum remove -y xx
+: 1682084169:0;yum whatprovides COMMAND
+: 1682084172:0;yum groupremove xx
+: 1682084193:0;yum groupinstall xx
+: 1682084215:0;yum makecache
+: 1682084244:0;yum clean all
+: 1682084249:0;yum install -y xx
+: 1682084804:0;date
+: 1682086139:0;cat /etc/resolv.conf
+: 1682086151:0;host fqdn dnsServer
+: 1682174462:0;pwd
+: 1682339021:0;source ~/.zshrc
+: 1682341132:0;df -h
+: 1682342157:0;ping
+: 1682343445:0;vim ~/.aws/credentials
+: 1682343448:0;cat ~/.aws/credentials
+: 1682343462:0;vim ~/.kube/config
+: 1682343470:0;cat ~/.kube/config
+: 1682344432:0;cd
+: 1682344542:0;exit
+: 1682345759:0;ls .aws/
+: 1682345829:0;python
+: 1682345835:0;python -m module
+: 1682345862:0;file
+: 1682387607:0;nc target.host.fqdn port
+: 1682389483:0;ls
+: 1682389550:0;env | grep -i kube
+: 1682389621:0;kubectl get no
+: 1682389642:0;kubectl top no
+: 1682389644:0;kubectl get po -A
+: 1682389652:0;docker images
+: 1682389665:0;ll .kube/config
+: 1682389666:0;ll -al
+: 1682402162:0;exit
+: 1682402185:0;ls -al
+: 1682402196:0;exit

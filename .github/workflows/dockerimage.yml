@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ steps.get_tag_name.outputs.VERSION }}
+
+    - name: CI Docker Login
+      run: |
+        docker login registry.cn-hangzhou.aliyuncs.com -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
+
+    - name: Build the Docker kube-toolkit
+      run: |
+        docker build -t registry.cn-hangzhou.aliyuncs.com/jihaoyun/kube-toolkit:latest .
+        docker push registry.cn-hangzhou.aliyuncs.com/jihaoyun/kube-toolkit:latest
