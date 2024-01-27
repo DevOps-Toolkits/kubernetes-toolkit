@@ -1,0 +1,24 @@
+name: Manual Docker Image CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Docker Login
+      run: |
+        docker login registry.cn-hangzhou.aliyuncs.com -u ${{ secrets.ALI_REGISTRY_USERNAME }} -p ${{ secrets.ALI_REGISTRY_PASSWORD }}
+
+    - name: Pull and Tag the Docker Image
+      run: |
+        docker pull thijsvanloef/palworld-server-docker:latest
+        docker tag thijsvanloef/palworld-server-docker:latest registry.cn-hangzhou.aliyuncs.com/jihaoyun/palworld-server-docker:latest
+
+    - name: Push Docker Image
+      run: |
+        docker push registry.cn-hangzhou.aliyuncs.com/jihaoyun/palworld-server-docker:latest
