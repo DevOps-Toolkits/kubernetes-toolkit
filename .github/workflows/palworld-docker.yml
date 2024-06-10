@@ -16,9 +16,9 @@ jobs:
 
     - name: Pull and Tag the Docker Image
       run: |
-        docker pull thijsvanloef/palworld-server-docker:latest
-        docker tag thijsvanloef/palworld-server-docker:latest registry.cn-hangzhou.aliyuncs.com/jihaoyun/palworld-server-docker:latest
+        docker pull docker.io/zhayujie/chatgpt-on-wechat:latest
+        docker tag docker.io/zhayujie/chatgpt-on-wechat:latest registry.cn-hangzhou.aliyuncs.com/jihaoyun/chatgpt-on-wechat:latest
 
     - name: Push Docker Image
       run: |
-        docker push registry.cn-hangzhou.aliyuncs.com/jihaoyun/palworld-server-docker:latest
+        docker push registry.cn-hangzhou.aliyuncs.com/jihaoyun/chatgpt-on-wechat:latest
