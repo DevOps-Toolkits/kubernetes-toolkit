@@ -22,13 +22,13 @@ jobs:
       run: docker pull ${{ github.event.inputs.public_image }}
 
     - name: Tag image for Aliyun registry
-      run: docker tag ${{ github.event.inputs.public_image }} registry.cn-hangzhou.aliyuncs.com/${{ github.event.inputs.aliyun_image }}
+      run: docker tag ${{ github.event.inputs.public_image }} registry.cn-hangzhou.aliyuncs.com/jihaoyun/${{ github.event.inputs.aliyun_image }}
 
     - name: Log in to Aliyun Docker Registry
       run: docker login registry.cn-hangzhou.aliyuncs.com -u "${{ secrets.ALI_REGISTRY_USERNAME }}" -p "${{ secrets.ALI_REGISTRY_PASSWORD }}"
 
     - name: Push image to Aliyun
-      run: docker push registry.cn-hangzhou.aliyuncs.com/${{ github.event.inputs.aliyun_image }}
+      run: docker push registry.cn-hangzhou.aliyuncs.com/jihaoyun/${{ github.event.inputs.aliyun_image }}
 
     - name: Log out from Docker registries
       run: docker logout
