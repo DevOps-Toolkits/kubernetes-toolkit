@@ -1,0 +1,37 @@
+name: Docker Image Sync to Aliyun
+
+on:
+  workflow_dispatch:
+    inputs:
+      public_image:
+        description: 'Public Docker image (e.g., nginx:latest)'
+        required: true
+      aliyun_image:
+        description: 'Aliyun Docker image (e.g., <your_aliyun_namespace>/<your_image_name>:<tag>)'
+        required: true
+
+jobs:
+  sync-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+    - name: Pull image from Docker Hub
+      run: docker pull ${{ github.event.inputs.public_image }}
+
+    - name: Tag image for Aliyun registry
+      run: docker tag ${{ github.event.inputs.public_image }} registry.cn-hangzhou.aliyuncs.com/${{ github.event.inputs.aliyun_image }}
+
+    - name: Log in to Aliyun Docker Registry
+      run: docker login registry.cn-hangzhou.aliyuncs.com -u "${{ secrets.ALI_REGISTRY_USERNAME }}" -p "${{ secrets.ALI_REGISTRY_PASSWORD }}"
+
+    - name: Push image to Aliyun
+      run: docker push registry.cn-hangzhou.aliyuncs.com/${{ github.event.inputs.aliyun_image }}
+
+    - name: Log out from Docker registries
+      run: docker logout
