@@ -1,4 +1,4 @@
-name: Docker Image Sync to Aliyun
+name: Docker Image Sync to Aliyun SH
 
 on:
   workflow_dispatch:
